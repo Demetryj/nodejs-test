@@ -14,19 +14,15 @@ const validationUpdateContact = contactsValidation.updateContactValidation(
   contactsSchema.updateContactSchema
 );
 
-router.get("/", contatsControllers.getAllContacts);
+router.get("/", contatsControllers.getAll);
 
-router.get("/:contactId", contatsControllers.getContactById);
+router.get("/:contactId", contatsControllers.getById);
 
-router.post("/", validationAddContact, contatsControllers.addContact);
+router.post("/", validationAddContact, contatsControllers.add);
 
-router.delete("/:contactId", contatsControllers.deleteContact);
+router.delete("/:contactId", contatsControllers.remove);
 
-router.put(
-  "/:contactId",
-  validationUpdateContact,
-  contatsControllers.changeContact
-);
+router.put("/:contactId", validationUpdateContact, contatsControllers.update);
 
 module.exports = router;
 

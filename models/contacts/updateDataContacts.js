@@ -7,4 +7,4 @@ async function updateDataContacts(newDataContacts) {
   await fs.writeFile(pathFileContacts, JSON.stringify(newDataContacts));
 }
 
-module.exports = { updateDataContacts };
+module.exports = updateDataContacts;
